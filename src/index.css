@@ -83,3 +83,17 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .animate-blob { animation: none; }
 }
+
+/* Hero wave slide */
+@keyframes waveSlide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-wave-slide {
+  animation: waveSlide 7s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave-slide { animation: none; }
+}

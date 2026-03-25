@@ -1,0 +1,195 @@
+export const es = {
+  nav: {
+    inicio: 'Inicio',
+    sobre: 'Sobre mí',
+    habilidades: 'Habilidades',
+    experiencia: 'Experiencia',
+    proyectos: 'Proyectos',
+    contacto: 'Contacto',
+  },
+  hero: {
+    eyebrow: '// Full Stack Developer & Analista de Sistemas',
+    tagline: 'Construyo productos digitales completos, del backend a la pantalla.',
+    cta: 'Ver proyectos →',
+    location: '📍 Buenos Aires, Argentina',
+  },
+  about: {
+    eyebrow: '// sobre mí',
+    heading: 'Quién soy',
+    p1: 'Soy Full Stack Developer y Analista de Sistemas, egresado de ORT Argentina (2022–2025). Trabajo principalmente con React y Firebase — con los que diseñé arquitecturas serverless, integré pasarelas de pago y construí plataformas completas — y con Flutter & Dart para aplicaciones móviles multiplataforma.',
+    p2: 'Me muevo cómodo en todo el stack: desde modelar la estructura de datos en Firestore hasta construir interfaces responsivas en React. Me interesa tomar decisiones técnicas con criterio — entender el problema antes de elegir la herramienta.',
+    cards: {
+      sistemas:    { title: 'Analista de Sistemas',  sub: 'ORT Argentina · 2022–2025' },
+      programador: { title: 'Analista Programador',  sub: 'ORT Argentina · 2022–2024' },
+      claude:      { title: 'Claude Code in Action', sub: 'Anthropic · Marzo 2026' },
+      ingles:      { title: 'Inglés B1',             sub: 'Lectura técnica fluida, comunicación profesional básica' },
+      foco:        { title: 'Foco actual',           sub: 'Arquitecturas serverless, Flutter, integraciones de pagos' },
+    },
+  },
+  skills: {
+    eyebrow: '// habilidades',
+    heading: 'Stack tecnológico',
+    categories: {
+      frontend:  'Frontend',
+      backend:   'Backend',
+      mobile:    'Mobile',
+      databases: 'Bases de datos',
+      payments:  'Pagos & APIs',
+      tools:     'Herramientas',
+    },
+  },
+  experience: {
+    eyebrow: '// experiencia',
+    heading: 'Mi trayectoria',
+    jobs: {
+      genesis: {
+        period: 'Septiembre 2025 – Presente',
+        bullets: [
+          'Arquitecté y desarrollé la plataforma e-commerce completa — catálogo, carrito, checkout y gestión de pedidos — contribuyendo a un incremento del 35% en ventas.',
+          'Integré Mercado Pago Checkout Pro con validación de órdenes via Cloud Functions, aumentando los pedidos en un 15% y garantizando integridad transaccional.',
+          'Diseñé arquitectura serverless (Firebase Hosting, Firestore, Storage, Cloud Functions v2) priorizando escalabilidad y cero mantenimiento de infraestructura.',
+          'Implementé lógica de envíos con ViaCargo, reduciendo costos logísticos en un 20% al automatizar el cálculo de tarifas por destino.',
+          'Construí sistema de notificaciones por email con MailSender, expandiendo el alcance mayorista en un 30%.',
+        ],
+      },
+      nutrabit: {
+        period: 'Marzo 2025 – Julio 2025',
+        bullets: [
+          'Desarrollé funcionalidades core de una app móvil multiplataforma con Flutter & Dart, priorizando performance y consistencia visual entre iOS y Android.',
+          'Diseñé la estructura de colecciones en Firestore y los flujos de autenticación (Firebase Auth), definiendo el modelo de datos para nutricionistas y pacientes.',
+          'Implementé gestión de turnos con calendario interactivo y perfiles personalizados por usuario con sincronización en tiempo real.',
+          'Construí el sistema de carga y gestión de documentos (PDF/multimedia) en Firebase Storage para compartir contenido clínico entre profesionales y pacientes.',
+        ],
+      },
+      coolvending: {
+        period: 'Febrero 2026 – Marzo 2026',
+        bullets: [
+          'Diseñé e implementé el sitio completo de forma independiente, desde la arquitectura de datos en Firestore hasta el deploy en cPanel/Apache con routing SPA vía .htaccess.',
+          'Resolví la concurrencia en la generación de números de presupuesto (CV-001/26) con runTransaction, garantizando unicidad sin duplicados bajo solicitudes simultáneas.',
+          'Arquitecté el sistema de roles y permisos con Firestore Security Rules validadas server-side — el panel /admin no es accesible ni manipulable desde el cliente.',
+          'Implementé dark mode completo en CSS puro con [data-theme="dark"] — sin JavaScript en runtime, sin flicker al cargar y con transición global de colores.',
+          'Construí el hook useScrollReveal con IntersectionObserver como reemplazo de librerías de animación, reduciendo el bundle sin sacrificar la experiencia visual.',
+          'Desarrollé CRUD completo de máquinas, eventos e insumos en el panel admin, con control de visibilidad de precios por usuario (puedeVerPrecios) gestionado desde Firestore.',
+        ],
+      },
+    },
+  },
+  projects: {
+    eyebrow: '// proyectos',
+    heading: 'Lo que construí',
+    wip: 'En desarrollo',
+    private: 'Privado',
+    visit: 'Ver sitio',
+    badges: { ecommerce: 'E-Commerce', mobile: 'App Móvil', webapp: 'Web App' },
+    descriptions: {
+      genesis:     'Plataforma de e-commerce completa para tienda de airsoft. Incluye catálogo de productos, carrito de compras, checkout con Mercado Pago, gestión de pedidos, notificaciones por email y lógica de envíos con ViaCargo.',
+      nutrabit:    'Aplicación móvil de gestión nutricional para nutricionistas y pacientes. Gestión de turnos, calendario, perfiles personalizados y sistema de documentos (PDF/multimedia) para compartir contenido entre profesionales y pacientes.',
+      coolvending: 'Plataforma web para gestión y visualización de máquinas expendedoras. Interfaz moderna para administrar inventario, seguimiento de ventas y estado de máquinas en tiempo real.',
+    },
+  },
+  contact: {
+    eyebrow: '// contacto',
+    heading: '¿Hablamos?',
+    sub: 'Estoy disponible para proyectos freelance, oportunidades full-time y colaboraciones.',
+    cta: 'Enviar email',
+  },
+  footer: { built: 'Construido con' },
+}
+
+export const en = {
+  nav: {
+    inicio: 'Home',
+    sobre: 'About',
+    habilidades: 'Skills',
+    experiencia: 'Experience',
+    proyectos: 'Projects',
+    contacto: 'Contact',
+  },
+  hero: {
+    eyebrow: '// Full Stack Developer & Systems Analyst',
+    tagline: 'I build complete digital products, from backend to screen.',
+    cta: 'View projects →',
+    location: '📍 Buenos Aires, Argentina',
+  },
+  about: {
+    eyebrow: '// about me',
+    heading: 'Who I am',
+    p1: "I'm a Full Stack Developer and Systems Analyst, graduated from ORT Argentina (2022–2025). I mainly work with React and Firebase — designing serverless architectures, integrating payment gateways and building complete platforms — and with Flutter & Dart for cross-platform mobile apps.",
+    p2: "I'm comfortable across the full stack: from modeling data structures in Firestore to building responsive interfaces in React. I care about making technical decisions with purpose — understanding the problem before choosing the tool.",
+    cards: {
+      sistemas:    { title: 'Systems Analyst',       sub: 'ORT Argentina · 2022–2025' },
+      programador: { title: 'Programmer Analyst',    sub: 'ORT Argentina · 2022–2024' },
+      claude:      { title: 'Claude Code in Action', sub: 'Anthropic · March 2026' },
+      ingles:      { title: 'English B1',            sub: 'Fluent technical reading, basic professional communication' },
+      foco:        { title: 'Current focus',         sub: 'Serverless architectures, Flutter, payment integrations' },
+    },
+  },
+  skills: {
+    eyebrow: '// skills',
+    heading: 'Tech stack',
+    categories: {
+      frontend:  'Frontend',
+      backend:   'Backend',
+      mobile:    'Mobile',
+      databases: 'Databases',
+      payments:  'Payments & APIs',
+      tools:     'Tools',
+    },
+  },
+  experience: {
+    eyebrow: '// experience',
+    heading: 'My journey',
+    jobs: {
+      genesis: {
+        period: 'September 2025 – Present',
+        bullets: [
+          'Architected and built the full e-commerce platform — catalog, cart, checkout and order management — contributing to a 35% increase in sales.',
+          'Integrated Mercado Pago Checkout Pro with order validation via Cloud Functions, increasing orders by 15% and ensuring transactional integrity.',
+          'Designed serverless architecture (Firebase Hosting, Firestore, Storage, Cloud Functions v2) prioritizing scalability and zero infrastructure maintenance.',
+          'Implemented shipping logic with ViaCargo, reducing logistics costs by 20% by automating fare calculation per destination.',
+          'Built an email notification system with MailSender, expanding wholesale client reach by 30%.',
+        ],
+      },
+      nutrabit: {
+        period: 'March 2025 – July 2025',
+        bullets: [
+          'Developed core features of a cross-platform mobile app with Flutter & Dart, prioritizing performance and visual consistency across iOS and Android.',
+          'Designed the Firestore collection structure and authentication flows (Firebase Auth), defining the data model for nutritionists and patients.',
+          'Implemented appointment management with an interactive calendar and real-time synchronized user profiles.',
+          'Built a document management system (PDF/multimedia) on Firebase Storage for nutritionists to share clinical content with patients.',
+        ],
+      },
+      coolvending: {
+        period: 'February 2026 – March 2026',
+        bullets: [
+          'Designed and built the full site independently, from the Firestore data architecture to the cPanel/Apache deploy with SPA routing via .htaccess.',
+          'Solved concurrency in quote number generation (CV-001/26) using runTransaction, guaranteeing uniqueness under simultaneous requests.',
+          'Architected the role and permissions system with server-side Firestore Security Rules — the /admin panel is not accessible or manipulable from the client.',
+          'Implemented full CSS-only dark mode with [data-theme="dark"] — no runtime JavaScript, no flicker on load, with global color transitions.',
+          'Built a custom useScrollReveal hook with IntersectionObserver as a replacement for animation libraries, reducing bundle size without sacrificing UX.',
+          'Developed full CRUD for machines, events and supplies in the admin panel, with per-user price visibility control (puedeVerPrecios) managed from Firestore.',
+        ],
+      },
+    },
+  },
+  projects: {
+    eyebrow: '// projects',
+    heading: 'What I built',
+    wip: 'In progress',
+    private: 'Private',
+    visit: 'Visit site',
+    badges: { ecommerce: 'E-Commerce', mobile: 'Mobile App', webapp: 'Web App' },
+    descriptions: {
+      genesis:     'Full e-commerce platform for an airsoft store. Includes product catalog, shopping cart, Mercado Pago checkout, order management, email notifications and shipping logic with ViaCargo.',
+      nutrabit:    'Mobile app for nutritional management for nutritionists and patients. Appointment management, calendar, personalized profiles and a document system (PDF/multimedia) to share content between professionals and patients.',
+      coolvending: 'Web platform for managing and visualizing vending machines. Modern interface for inventory management, sales tracking and real-time machine status.',
+    },
+  },
+  contact: {
+    eyebrow: '// contact',
+    heading: "Let's talk",
+    sub: "I'm available for freelance projects, full-time opportunities and collaborations.",
+    cta: 'Send email',
+  },
+  footer: { built: 'Built with' },
+}

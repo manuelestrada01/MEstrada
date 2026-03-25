@@ -1,4 +1,8 @@
+import { useLang } from '../contexts/LangContext'
+
 export default function Hero() {
+  const { t } = useLang()
+
   return (
     <section
       id="hero"
@@ -28,7 +32,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-3xl mx-auto">
         {/* Eyebrow */}
         <p className="font-mono text-cyan-400 text-sm uppercase tracking-widest mb-6 animate-fade-up animate-fade-up-1">
-          // Full Stack Developer &amp; Analista de Sistemas
+          {t.hero.eyebrow}
         </p>
 
         {/* Name */}
@@ -38,7 +42,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p className="text-lg md:text-xl text-slate-400 max-w-xl mx-auto mb-10 animate-fade-up animate-fade-up-3">
-          Construyo productos digitales completos, del backend a la pantalla.
+          {t.hero.tagline}
         </p>
 
         {/* CTA buttons */}
@@ -47,7 +51,7 @@ export default function Hero() {
             href="#projects"
             className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-6 py-3 rounded-xl transition-colors"
           >
-            Ver proyectos →
+            {t.hero.cta}
           </a>
           <a
             href="https://github.com/manuelestrada01"
@@ -64,15 +68,26 @@ export default function Hero() {
 
         {/* Location */}
         <p className="text-slate-500 text-sm animate-fade-up animate-fade-up-5">
-          📍 Buenos Aires, Argentina
+          {t.hero.location}
         </p>
       </div>
 
-      {/* Wave embedded at bottom of hero — fills with next section's color */}
-      <div className="absolute bottom-0 left-0 right-0 z-0 pointer-events-none">
-        <svg viewBox="0 0 1440 70" preserveAspectRatio="none" className="w-full h-14 block" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,35 C180,70 360,0 540,35 C720,70 900,0 1080,35 C1260,70 1350,15 1440,35 L1440,70 L0,70 Z" fill="#1e293b" />
-        </svg>
+      {/* Wave animated at bottom of hero */}
+      <div className="absolute bottom-0 left-0 right-0 z-0 pointer-events-none overflow-hidden h-14">
+        <div className="flex h-full animate-wave-slide" style={{ width: '200%' }}>
+          {[0, 1].map((i) => (
+            <svg
+              key={i}
+              viewBox="0 0 1440 70"
+              preserveAspectRatio="none"
+              className="h-full block flex-shrink-0"
+              style={{ width: '50%' }}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0,35 C180,70 360,0 540,35 C720,70 900,0 1080,35 C1260,70 1350,15 1440,35 L1440,70 L0,70 Z" fill="#1e293b" />
+            </svg>
+          ))}
+        </div>
       </div>
 
       {/* Scroll indicator */}

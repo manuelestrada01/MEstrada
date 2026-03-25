@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "deslop": {
+      "source": "rawkode-academy/rawkode-academy",
+      "sourceType": "github",
+      "computedHash": "9feee6e976dde8e838778ec299a599107a33b312fd720216ede5563b4f1cae4c"
+    },
+    "tech": {
+      "source": "rawkode-academy/rawkode-academy",
+      "sourceType": "github",
+      "computedHash": "f1336913d86409f9fed89e2b2a2a906dc4f200930b618401dbe39b26d9b6c0dd"
+    }
+  }
+}

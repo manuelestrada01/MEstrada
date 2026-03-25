@@ -1,42 +1,27 @@
+import { useLang } from '../contexts/LangContext'
 import { useReveal } from '../hooks/useReveal'
 
-const SKILLS = [
-  {
-    category: 'Frontend',
-    items: ['React', 'Vue', 'HTML5', 'CSS3', 'JavaScript ES6+'],
-  },
-  {
-    category: 'Backend',
-    items: ['Node.js', 'Firebase Cloud Functions v2'],
-  },
-  {
-    category: 'Mobile',
-    items: ['Flutter', 'Dart'],
-  },
-  {
-    category: 'Bases de datos',
-    items: ['SQL Server', 'Firebase Firestore'],
-  },
-  {
-    category: 'Pagos & APIs',
-    items: ['Mercado Pago Checkout Pro'],
-  },
-  {
-    category: 'Herramientas',
-    items: ['Git', 'GitHub', 'Scrum', 'Cloudflare', 'Firebase Hosting', 'Firebase Storage'],
-  },
+const getSkills = (t) => [
+  { category: t.skills.categories.frontend,  items: ['React', 'Vue', 'HTML5', 'CSS3', 'JavaScript ES6+'] },
+  { category: t.skills.categories.backend,   items: ['Node.js', 'Next.js', 'Firebase Cloud Functions v2'] },
+  { category: t.skills.categories.mobile,    items: ['Flutter', 'Dart'] },
+  { category: t.skills.categories.databases, items: ['SQL Server', 'Firebase Firestore'] },
+  { category: t.skills.categories.payments,  items: ['Mercado Pago Checkout Pro'] },
+  { category: t.skills.categories.tools,     items: ['Git', 'GitHub', 'Scrum', 'Cloudflare', 'Firebase Hosting', 'Firebase Storage'] },
 ]
 
 export default function Skills() {
   const ref = useReveal()
+  const { t } = useLang()
+  const SKILLS = getSkills(t)
 
   return (
     <section id="skills" ref={ref} className="py-24 px-6 max-w-6xl mx-auto">
       <div className="reveal mb-12">
         <p className="font-mono text-cyan-400 text-sm uppercase tracking-widest mb-2">
-          // habilidades
+          {t.skills.eyebrow}
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white">Stack tecnológico</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white">{t.skills.heading}</h2>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

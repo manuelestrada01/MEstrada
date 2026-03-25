@@ -1,46 +1,47 @@
+import { useLang } from '../contexts/LangContext'
 import { useReveal } from '../hooks/useReveal'
 
-const EXPERIENCE = [
+const getExperience = (t) => [
   {
-    role: 'Full Stack Developer',
-    company: 'Genesis Airsoft',
-    period: 'Septiembre 2025 – Presente',
-    bullets: [
-      'Desarrollé una plataforma e-commerce completa con React y Firebase, contribuyendo a un incremento del 35% en ventas a través de mejoras de UX.',
-      'Integré Mercado Pago Checkout Pro, aumentando los pedidos en un 15%.',
-      'Implementé notificaciones por email con MailSender, expandiendo el alcance mayorista en un 30%.',
-      'Diseñé arquitectura serverless con Firebase Hosting, Firestore, Storage y Cloud Functions v2.',
-      'Integré lógica de envíos con ViaCargo, reduciendo costos logísticos en un 20%.',
-      'Construí sistema de validación de pedidos mediante Cloud Functions para garantizar integridad de órdenes.',
-    ],
-    tags: ['React', 'Firebase', 'Node.js', 'Cloud Functions', 'Mercado Pago', 'ViaCargo'],
+    role: 'Full Stack Developer — Freelance',
+    company: 'CoolVending',
+    period: t.experience.jobs.coolvending.period,
+    bullets: t.experience.jobs.coolvending.bullets,
+    tags: ['React 19', 'Vite', 'Firebase', 'Bootstrap 5', 'React Router v7', 'Firestore', 'Firebase Auth'],
+    link: 'https://coolvending.com.ar',
     delay: 'reveal-delay-1',
   },
   {
     role: 'Full Stack Developer',
-    company: 'Nutrabit',
-    period: 'Marzo 2025 – Julio 2025',
-    bullets: [
-      'Desarrollé funcionalidades clave de una app móvil con Flutter & Dart para gestión nutricional.',
-      'Integré Firebase (Firestore, Storage, Authentication) para datos, autenticación y almacenamiento de archivos.',
-      'Implementé gestión de turnos, calendario y personalización de perfiles de usuario.',
-      'Construí sistema de carga y almacenamiento de PDFs y contenido multimedia para compartir entre nutricionistas y pacientes.',
-    ],
-    tags: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Cloud Storage', 'Firebase Auth'],
+    company: 'Genesis Airsoft',
+    period: t.experience.jobs.genesis.period,
+    bullets: t.experience.jobs.genesis.bullets,
+    tags: ['React', 'Firebase', 'Node.js', 'Cloud Functions', 'Mercado Pago', 'ViaCargo'],
+    link: 'https://genesisairsoft.com.ar/',
     delay: 'reveal-delay-2',
+  },
+  {
+    role: 'Full Stack Developer',
+    company: 'Nutrabit',
+    period: t.experience.jobs.nutrabit.period,
+    bullets: t.experience.jobs.nutrabit.bullets,
+    tags: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Cloud Storage', 'Firebase Auth'],
+    delay: 'reveal-delay-3',
   },
 ]
 
 export default function Experience() {
   const ref = useReveal()
+  const { t } = useLang()
+  const EXPERIENCE = getExperience(t)
 
   return (
     <section id="experience" ref={ref} className="py-24 px-6 max-w-6xl mx-auto">
       <div className="reveal mb-12">
         <p className="font-mono text-cyan-400 text-sm uppercase tracking-widest mb-2">
-          // experiencia
+          {t.experience.eyebrow}
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white">Mi trayectoria</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white">{t.experience.heading}</h2>
       </div>
 
       {/* Timeline */}
@@ -85,6 +86,21 @@ export default function Experience() {
                     </span>
                   ))}
                 </div>
+
+                {/* Live link */}
+                {job.link && (
+                  <a
+                    href={job.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-4 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    {job.link.replace('https://', '')}
+                  </a>
+                )}
               </div>
             </div>
           ))}

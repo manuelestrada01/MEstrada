@@ -1,3 +1,4 @@
+import { useLang } from '../contexts/LangContext'
 import { useReveal } from '../hooks/useReveal'
 
 function GitHubIcon() {
@@ -25,64 +26,56 @@ function MailIcon() {
 }
 
 const SOCIAL_LINKS = [
-  {
-    label: 'GitHub',
-    href: 'https://github.com/manuelestrada01',
-    icon: <GitHubIcon />,
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/manuel-estrada-086328251',
-    icon: <LinkedInIcon />,
-  },
-  {
-    label: 'Email',
-    href: 'mailto:estradamanuel15@yahoo.com',
-    icon: <MailIcon />,
-  },
+  { key: 'GitHub',   href: 'https://github.com/manuelestrada01',                      icon: <GitHubIcon /> },
+  { key: 'LinkedIn', href: 'https://www.linkedin.com/in/manuel-estrada-086328251',    icon: <LinkedInIcon /> },
+  { key: 'Email',    href: 'mailto:estradamanuel15@yahoo.com',                        icon: <MailIcon /> },
 ]
 
 export default function Contact() {
   const ref = useReveal()
+  const { t } = useLang()
 
   return (
     <section id="contact" ref={ref} className="py-24 px-6">
       <div className="max-w-2xl mx-auto text-center">
         <div className="reveal mb-4">
           <p className="font-mono text-cyan-400 text-sm uppercase tracking-widest mb-2">
-            // contacto
+            {t.contact.eyebrow}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">¿Hablamos?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">{t.contact.heading}</h2>
         </div>
 
         <p className="reveal reveal-delay-1 text-slate-400 text-lg mb-10">
-          Estoy disponible para proyectos freelance, oportunidades full-time y colaboraciones.
+          {t.contact.sub}
         </p>
 
         {/* Primary CTA */}
-        <div className="reveal reveal-delay-2 mb-10">
+        <div className="reveal reveal-delay-2 mb-10 flex flex-col items-center gap-3">
           <a
             href="mailto:estradamanuel15@yahoo.com"
             className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold text-lg px-8 py-4 rounded-xl transition-colors"
           >
             <MailIcon />
-            Enviar email
+            {t.contact.cta}
           </a>
+          <span className="text-slate-500 text-sm font-mono select-all">
+            estradamanuel15@yahoo.com
+          </span>
         </div>
 
         {/* Social links */}
         <div className="reveal reveal-delay-3 flex items-center justify-center gap-4 mb-10">
           {SOCIAL_LINKS.map((social) => (
             <a
-              key={social.label}
+              key={social.key}
               href={social.href}
               target={social.href.startsWith('mailto') ? undefined : '_blank'}
               rel={social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              aria-label={social.label}
+              aria-label={social.key}
               className="flex items-center gap-2 p-3 bg-surface-card rounded-xl border border-surface-border hover:border-cyan-400 hover:text-cyan-400 text-slate-400 transition-all"
             >
               {social.icon}
-              <span className="text-sm font-medium">{social.label}</span>
+              <span className="text-sm font-medium">{social.key}</span>
             </a>
           ))}
         </div>

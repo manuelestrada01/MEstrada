@@ -1,11 +1,11 @@
+import { useLang } from '../contexts/LangContext'
 import { useReveal } from '../hooks/useReveal'
 
-const PROJECTS = [
+const getProjects = (t) => [
   {
-    badge: 'E-Commerce',
+    badge: t.projects.badges.ecommerce,
     name: 'Genesis Airsoft',
-    description:
-      'Plataforma de e-commerce completa para tienda de airsoft. Incluye catálogo de productos, carrito de compras, checkout con Mercado Pago, gestión de pedidos, notificaciones por email y lógica de envíos con ViaCargo.',
+    description: t.projects.descriptions.genesis,
     tags: ['React', 'Firebase', 'Cloud Functions', 'Mercado Pago', 'ViaCargo'],
     github: null,
     live: 'https://genesisairsoft.com.ar',
@@ -13,10 +13,9 @@ const PROJECTS = [
     delay: 'reveal-delay-1',
   },
   {
-    badge: 'App Móvil',
+    badge: t.projects.badges.mobile,
     name: 'Nutrabit',
-    description:
-      'Aplicación móvil de gestión nutricional para nutricionistas y pacientes. Gestión de turnos, calendario, perfiles personalizados y sistema de documentos (PDF/multimedia) para compartir contenido entre profesionales y pacientes.',
+    description: t.projects.descriptions.nutrabit,
     tags: ['Flutter', 'Dart', 'Firebase', 'Firestore'],
     github: null,
     live: null,
@@ -24,10 +23,9 @@ const PROJECTS = [
     delay: 'reveal-delay-2',
   },
   {
-    badge: 'Web App',
+    badge: t.projects.badges.webapp,
     name: 'CoolVending',
-    description:
-      'Plataforma web para gestión y visualización de máquinas expendedoras. Interfaz moderna para administrar inventario, seguimiento de ventas y estado de máquinas en tiempo real.',
+    description: t.projects.descriptions.coolvending,
     tags: ['React', 'Vite', 'JavaScript', 'CSS'],
     github: 'https://github.com/manuelestrada01/Coolvending',
     live: null,
@@ -62,14 +60,16 @@ function GitHubIcon() {
 
 export default function Projects() {
   const ref = useReveal()
+  const { t } = useLang()
+  const PROJECTS = getProjects(t)
 
   return (
     <section id="projects" ref={ref} className="py-24 px-6 max-w-6xl mx-auto">
       <div className="reveal mb-12">
         <p className="font-mono text-cyan-400 text-sm uppercase tracking-widest mb-2">
-          // proyectos
+          {t.projects.eyebrow}
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white">Lo que construí</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white">{t.projects.heading}</h2>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,7 +89,7 @@ export default function Projects() {
               </span>
               {project.wip && (
                 <span className="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono uppercase tracking-widest rounded-full px-3 py-1">
-                  En desarrollo
+                  {t.projects.wip}
                 </span>
               )}
             </div>
@@ -130,7 +130,7 @@ export default function Projects() {
                 </a>
               ) : (
                 <span className="w-32 flex items-center justify-center gap-1.5 text-xs border border-surface-border/50 text-slate-700 px-3 py-1.5 rounded-md cursor-not-allowed">
-                  <LockIcon /> Privado
+                  <LockIcon /> {t.projects.private}
                 </span>
               )}
 
@@ -142,7 +142,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="w-32 flex items-center justify-center gap-1.5 text-xs bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400/60 text-cyan-400 font-medium px-3 py-1.5 rounded-md transition-colors"
                 >
-                  <ExternalLinkIcon /> Ver sitio
+                  <ExternalLinkIcon /> {t.projects.visit}
                 </a>
               )}
             </div>

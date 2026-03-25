@@ -1,17 +1,10 @@
 import { useState, useEffect } from 'react'
-
-const NAV_LINKS = [
-  { label: 'Inicio', href: '#hero' },
-  { label: 'Sobre mí', href: '#about' },
-  { label: 'Habilidades', href: '#skills' },
-  { label: 'Experiencia', href: '#experience' },
-  { label: 'Proyectos', href: '#projects' },
-  { label: 'Contacto', href: '#contact' },
-]
+import { useLang } from '../contexts/LangContext'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { lang, setLang, toggleLang, t } = useLang()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -21,11 +14,33 @@ export default function Navbar() {
 
   const handleLinkClick = () => setMenuOpen(false)
 
+  const NAV_LINKS = [
+    { label: t.nav.inicio,      href: '#hero' },
+    { label: t.nav.sobre,       href: '#about' },
+    { label: t.nav.habilidades, href: '#skills' },
+    { label: t.nav.experiencia, href: '#experience' },
+    { label: t.nav.contacto,    href: '#contact' },
+  ]
+
+  const LangToggle = ({ className = '' }) => (
+    <button
+      onClick={toggleLang}
+      title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+      className={`rounded overflow-hidden transition-all duration-200 hover:scale-110 hover:ring-1 hover:ring-cyan-400/50 ${className}`}
+    >
+      <img
+        src={lang === 'es' ? 'https://flagcdn.com/w40/ar.png' : 'https://flagcdn.com/w40/us.png'}
+        alt={lang === 'es' ? 'Argentina' : 'United States'}
+        className="w-7 h-auto block"
+      />
+    </button>
+  )
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'backdrop-blur-md bg-surface/80 border-b border-surface-border'
+          ? 'backdrop-blur-md bg-surface/80'
           : 'bg-transparent'
       }`}
     >
@@ -52,13 +67,16 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA */}
-        <a
-          href="#contact"
-          className="hidden md:inline-flex items-center gap-2 border border-cyan-500 text-cyan-400 text-sm px-4 py-2 rounded-lg hover:bg-cyan-500/10 transition-colors"
-        >
-          Contacto
-        </a>
+        {/* Desktop right side: lang toggle + CTA */}
+        <div className="hidden md:flex items-center gap-3">
+          <LangToggle />
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 border border-cyan-500 text-cyan-400 text-sm px-4 py-2 rounded-lg hover:bg-cyan-500/10 transition-colors"
+          >
+            {t.nav.contacto}
+          </a>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -94,6 +112,9 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+          <div className="mt-4 flex justify-center">
+            <LangToggle />
+          </div>
         </div>
       )}
     </header>
