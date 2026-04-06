@@ -5,7 +5,7 @@ const getSkills = (t) => [
   { category: t.skills.categories.frontend,  items: ['React', 'Vue', 'HTML5', 'CSS3', 'JavaScript ES6+'] },
   { category: t.skills.categories.backend,   items: ['Node.js', 'Next.js', 'Firebase Cloud Functions v2', 'Java'] },
   { category: t.skills.categories.mobile,    items: ['Flutter', 'Dart'] },
-  { category: t.skills.categories.databases, items: ['SQL Server', 'Firebase Firestore'] },
+  { category: t.skills.categories.databases, items: ['SQL Server', 'Firebase Firestore', 'MongoDB'] },
   { category: t.skills.categories.payments,  items: ['Mercado Pago Checkout Pro'] },
   { category: t.skills.categories.tools,     items: ['Git', 'GitHub', 'Scrum', 'Cloudflare', 'Firebase Hosting', 'Firebase Storage'] },
 ]
