@@ -48,7 +48,7 @@ export default function Hero() {
         {/* CTA buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-6 animate-fade-up animate-fade-up-4">
           <a
-            href="#projects"
+            href="#experience"
             className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-6 py-3 rounded-xl transition-colors"
           >
             {t.hero.cta}
