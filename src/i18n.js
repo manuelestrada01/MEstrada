@@ -43,7 +43,9 @@ export const es = {
     heading: 'Mi trayectoria',
     jobs: {
       genesis: {
-        period: 'Septiembre 2025 – Presente',
+        period: 'Sep 2025 – Presente',
+        status: 'En producción',
+        short: 'Plataforma e-commerce full stack para tienda de airsoft: catálogo, carrito, checkout con Mercado Pago, gestión de pedidos, envíos con ViaCargo y notificaciones por email.',
         bullets: [
           'Arquitecté y desarrollé la plataforma e-commerce completa — catálogo, carrito, checkout y gestión de pedidos — contribuyendo a un incremento del 35% en ventas.',
           'Integré Mercado Pago Checkout Pro con validación de órdenes via Cloud Functions, aumentando los pedidos en un 15% y garantizando integridad transaccional.',
@@ -53,7 +55,9 @@ export const es = {
         ],
       },
       nutrabit: {
-        period: 'Marzo 2025 – Julio 2025',
+        period: 'Mar 2025 – Jul 2025',
+        status: 'App Móvil',
+        short: 'App multiplataforma de gestión nutricional con Flutter & Dart. Turnos con calendario interactivo, perfiles personalizados y sistema de documentos clínicos (PDF/multimedia) en Firebase Storage.',
         bullets: [
           'Desarrollé funcionalidades core de una app móvil multiplataforma con Flutter & Dart, priorizando performance y consistencia visual entre iOS y Android.',
           'Diseñé la estructura de colecciones en Firestore y los flujos de autenticación (Firebase Auth), definiendo el modelo de datos para nutricionistas y pacientes.',
@@ -62,7 +66,9 @@ export const es = {
         ],
       },
       coolvending: {
-        period: 'Febrero 2026 – Marzo 2026',
+        period: 'Feb 2026 – Mar 2026',
+        status: 'En producción',
+        short: 'Sitio web para empresa de vending machines: panel admin con CRUD completo, sistema de roles y permisos server-side, generación de presupuestos y dark mode en CSS puro.',
         bullets: [
           'Diseñé e implementé el sitio completo de forma independiente, desde la arquitectura de datos en Firestore hasta el deploy en cPanel/Apache con routing SPA vía .htaccess.',
           'Resolví la concurrencia en la generación de números de presupuesto (CV-001/26) con runTransaction, garantizando unicidad sin duplicados bajo solicitudes simultáneas.',
@@ -141,7 +147,9 @@ export const en = {
     heading: 'My journey',
     jobs: {
       genesis: {
-        period: 'September 2025 – Present',
+        period: 'Sep 2025 – Present',
+        status: 'Live',
+        short: 'Full stack e-commerce platform for an airsoft store: catalog, cart, Mercado Pago checkout, order management, ViaCargo shipping logic and email notifications.',
         bullets: [
           'Architected and built the full e-commerce platform — catalog, cart, checkout and order management — contributing to a 35% increase in sales.',
           'Integrated Mercado Pago Checkout Pro with order validation via Cloud Functions, increasing orders by 15% and ensuring transactional integrity.',
@@ -151,7 +159,9 @@ export const en = {
         ],
       },
       nutrabit: {
-        period: 'March 2025 – July 2025',
+        period: 'Mar 2025 – Jul 2025',
+        status: 'Mobile App',
+        short: 'Cross-platform nutritional management app with Flutter & Dart. Interactive appointment calendar, personalized profiles and a clinical document system (PDF/multimedia) on Firebase Storage.',
         bullets: [
           'Developed core features of a cross-platform mobile app with Flutter & Dart, prioritizing performance and visual consistency across iOS and Android.',
           'Designed the Firestore collection structure and authentication flows (Firebase Auth), defining the data model for nutritionists and patients.',
@@ -160,7 +170,9 @@ export const en = {
         ],
       },
       coolvending: {
-        period: 'February 2026 – March 2026',
+        period: 'Feb 2026 – Mar 2026',
+        status: 'Live',
+        short: 'Website for a vending machine company: full admin panel with CRUD, server-side role & permissions system, quote generation and pure CSS dark mode.',
         bullets: [
           'Designed and built the full site independently, from the Firestore data architecture to the cPanel/Apache deploy with SPA routing via .htaccess.',
           'Solved concurrency in quote number generation (CV-001/26) using runTransaction, guaranteeing uniqueness under simultaneous requests.',
