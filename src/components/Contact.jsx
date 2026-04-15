@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useLang } from '../contexts/LangContext'
 import { useReveal } from '../hooks/useReveal'
 
@@ -31,9 +32,22 @@ const SOCIAL_LINKS = [
   { key: 'Email',    href: 'mailto:estradamanuel15@yahoo.com',                        icon: <MailIcon /> },
 ]
 
+const EMAIL = 'estradamanuel15@yahoo.com'
+
 export default function Contact() {
   const ref = useReveal()
   const { t } = useLang()
+  const [copied, setCopied] = useState(false)
+
+  function handleEmailClick(e) {
+    e.preventDefault()
+    navigator.clipboard.writeText(EMAIL).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }).catch(() => {
+      window.location.href = `mailto:${EMAIL}`
+    })
+  }
 
   return (
     <section id="contact" ref={ref} className="py-24 px-6">
@@ -51,15 +65,15 @@ export default function Contact() {
 
         {/* Primary CTA */}
         <div className="reveal reveal-delay-2 mb-10 flex flex-col items-center gap-3">
-          <a
-            href="mailto:estradamanuel15@yahoo.com"
+          <button
+            onClick={handleEmailClick}
             className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold text-lg px-8 py-4 rounded-xl transition-colors"
           >
             <MailIcon />
-            {t.contact.cta}
-          </a>
+            {copied ? (t.contact.copied ?? '¡Copiado!') : t.contact.cta}
+          </button>
           <span className="text-slate-500 text-sm font-mono select-all">
-            estradamanuel15@yahoo.com
+            {EMAIL}
           </span>
         </div>
 

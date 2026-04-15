@@ -189,6 +189,12 @@ function MobileIllustration({ accent }) {
 // ─── Config ───────────────────────────────────────────────────────────────────
 
 const VISUALS = {
+  levelup: {
+    bg: 'linear-gradient(145deg, #1c1408 0%, #0e0a02 55%, #1a1205 100%)',
+    accent: '#d4a853',
+    image: '/travelerforge-preview.png',
+    Illustration: DashboardIllustration,
+  },
   coolvending: {
     bg: 'linear-gradient(145deg, #1a1145 0%, #0d0922 55%, #111735 100%)',
     accent: '#818cf8',
@@ -218,6 +224,17 @@ const STATUS_COLORS = {
 }
 
 const getExperience = (t) => [
+  {
+    key: 'levelup',
+    role: 'Full Stack Developer',
+    company: 'LevelUp — Visor Académico Gamificado',
+    period: t.experience.jobs.levelup.period,
+    status: t.experience.jobs.levelup.status,
+    short: t.experience.jobs.levelup.short,
+    tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Google OAuth', 'Google Classroom API'],
+    link: 'https://www.travelerforge.com/login',
+    delay: 'reveal-delay-1',
+  },
   {
     key: 'coolvending',
     role: 'Full Stack Developer — Freelance',

@@ -65,6 +65,19 @@ export const es = {
           'Construí el sistema de carga y gestión de documentos (PDF/multimedia) en Firebase Storage para compartir contenido clínico entre profesionales y pacientes.',
         ],
       },
+      levelup: {
+        period: 'Mar 2026 – Abr 2026',
+        status: 'En producción',
+        short: 'Plataforma gamificada de seguimiento académico para la Escuela Cristiana Evangélica Argentina. Motor de XP, strikes, niveles, talentos y panel docente completo sobre Next.js 15 + Supabase.',
+        bullets: [
+          'Diseñé y desarrollé una plataforma gamificada de seguimiento académico utilizada por alumnos y docentes de Educación Secundaria Técnica.',
+          'Construí el sistema sobre Next.js 15 (App Router) + TypeScript + Tailwind CSS, con Supabase (Postgres) como fuente de verdad y Google OAuth para autenticación institucional.',
+          'Integré la Google Classroom API (read-only) para sincronizar entregas, fechas y estados de alumnos en tiempo real, con motor de TTL de 5 minutos por curso.',
+          'Implementé un motor de XP y niveles con lógica de negocio compleja: XP acumulativa, strikes académicos, bloqueo de bimestre automático, talentos y distinciones configurables por docente.',
+          'Desarrollé un panel docente completo con gestión de cursos, configuración de tipos de producción dinámica, excepciones manuales sobre alumnos y registro histórico de todas las acciones.',
+          'Apliqué Screaming Architecture separando dominios (xp, strikes, talentos, docente) del routing de Next.js, logrando una base de código mantenible y extensible sin acoplamiento entre features.',
+        ],
+      },
       coolvending: {
         period: 'Feb 2026 – Mar 2026',
         status: 'En producción',
@@ -98,6 +111,7 @@ export const es = {
     heading: '¿Hablamos?',
     sub: 'Estoy disponible para proyectos freelance, oportunidades full-time y colaboraciones.',
     cta: 'Enviar email',
+    copied: '¡Copiado!',
   },
   footer: { built: 'Construido con' },
 }
@@ -169,6 +183,19 @@ export const en = {
           'Built a document management system (PDF/multimedia) on Firebase Storage for nutritionists to share clinical content with patients.',
         ],
       },
+      levelup: {
+        period: 'Mar 2026 – Apr 2026',
+        status: 'Live',
+        short: 'Gamified academic tracking platform for a Christian secondary school in Argentina. XP engine, strikes, levels, talents, and a full teacher dashboard built on Next.js 15 + Supabase.',
+        bullets: [
+          'Designed and built a gamified academic tracking platform used by students and teachers at a Technical Secondary School.',
+          'Built the system on Next.js 15 (App Router) + TypeScript + Tailwind CSS, with Supabase (Postgres) as the source of truth and Google OAuth for institutional authentication.',
+          'Integrated the Google Classroom API (read-only) to sync assignments, dates and student statuses in real time, with a 5-minute TTL cache per course.',
+          'Implemented an XP and levels engine with complex business logic: cumulative XP, academic strikes, automatic semester lockouts, and per-teacher configurable talents and distinctions.',
+          'Built a full teacher panel with course management, dynamic production type configuration, manual student exceptions, and a complete audit log of all actions.',
+          'Applied Screaming Architecture separating domains (xp, strikes, talents, teacher) from Next.js routing, achieving a maintainable and extensible codebase with no cross-feature coupling.',
+        ],
+      },
       coolvending: {
         period: 'Feb 2026 – Mar 2026',
         status: 'Live',
@@ -202,6 +229,7 @@ export const en = {
     heading: "Let's talk",
     sub: "I'm available for freelance projects, full-time opportunities and collaborations.",
     cta: 'Send email',
+    copied: 'Copied!',
   },
   footer: { built: 'Built with' },
 }
