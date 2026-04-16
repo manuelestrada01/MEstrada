@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:fjanza.vercel.app)",
       "Bash(curl -s \"https://fjanza.vercel.app/\")",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(npm run:*)"
     ]
   }
 }
