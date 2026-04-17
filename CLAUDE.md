@@ -16,12 +16,13 @@ The goal is to showcase his technical profile, experience, and projects to poten
 
 ## Skills
 
-- **Frontend:** React, Vue, HTML5, CSS3, JavaScript (ES6+)
-- **Backend:** Node.js, Firebase Cloud Functions v2
+- **Frontend:** React, Next.js (App Router), Vue, HTML5, CSS3, JavaScript (ES6+), TypeScript, Tailwind CSS, GSAP
+- **Backend:** Node.js, Firebase Cloud Functions v2, Next.js API Routes, Supabase (Postgres)
 - **Mobile:** Flutter & Dart
-- **Databases:** SQL Server, Firebase (Firestore)
-- **APIs:** Mercado Pago Checkout Pro
-- **Tools:** Git, GitHub, Scrum, Cloudflare, Firebase Hosting & Storage
+- **Databases:** SQL Server, Firebase (Firestore), Supabase (Postgres)
+- **Auth:** Google OAuth, Firebase Authentication
+- **APIs:** Mercado Pago Checkout Pro, Google Classroom API
+- **Tools:** Git, GitHub, Scrum, Cloudflare, Firebase Hosting & Storage, Vercel
 
 ## Experience
 
