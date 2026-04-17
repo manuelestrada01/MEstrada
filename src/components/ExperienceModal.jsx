@@ -27,7 +27,10 @@ export default function ExperienceModal({ job, visual, statusStyle, onClose }) {
   const lbRef      = useRef(null)
   const lbImgRef   = useRef(null)
 
-  const openLightbox  = () => { setLightbox(true);  lbOpenRef.current = true  }
+  // Disable lightbox on touch/mobile — the carousel is already full-width there
+  const isDesktop = typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches
+
+  const openLightbox  = () => { if (!isDesktop) return; setLightbox(true);  lbOpenRef.current = true  }
   const closeLightbox = () => { setLightbox(false); lbOpenRef.current = false }
 
   // Body scroll lock
@@ -94,9 +97,9 @@ export default function ExperienceModal({ job, visual, statusStyle, onClose }) {
             LEFT — Image carousel
         ═══════════════════════════════════════════════════ */}
         <div
-          className="relative w-full md:w-[60%] h-64 md:h-auto md:min-h-full shrink-0 overflow-hidden group/img cursor-zoom-in"
+          className={`relative w-full md:w-[60%] h-64 md:h-auto md:min-h-full shrink-0 overflow-hidden group/img ${isDesktop && hasImages ? 'cursor-zoom-in' : ''}`}
           style={{ background: visual.bg }}
-          onClick={hasImages ? openLightbox : undefined}
+          onClick={hasImages && isDesktop ? openLightbox : undefined}
         >
           {/* Images stacked for crossfade */}
           {hasImages ? (
@@ -132,8 +135,8 @@ export default function ExperienceModal({ job, visual, statusStyle, onClose }) {
             style={{ background: `radial-gradient(ellipse at 50% 100%, ${visual.accent}10 0%, transparent 60%)` }}
           />
 
-          {/* Zoom hint — visible on hover */}
-          {hasImages && (
+          {/* Zoom hint — visible on hover (desktop only) */}
+          {hasImages && isDesktop && (
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
               <div className="w-10 h-10 rounded-full bg-slate-950/70 backdrop-blur-sm border border-white/20 flex items-center justify-center">
                 <svg className="w-5 h-5 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
