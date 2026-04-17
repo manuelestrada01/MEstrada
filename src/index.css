@@ -98,6 +98,27 @@ html {
   .animate-wave-slide { animation: none; }
 }
 
+/* Global scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22d3ee40;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b #0b1120;
+}
+
 /* Hide scrollbar (keep scroll functionality) */
 .no-scrollbar {
   -ms-overflow-style: none;
