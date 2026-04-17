@@ -1,8 +1,9 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLang } from '../contexts/LangContext'
+import ExperienceModal from './ExperienceModal'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
@@ -126,24 +127,51 @@ const VISUALS = {
   levelup: {
     bg: 'linear-gradient(145deg, #1c1408 0%, #0e0a02 55%, #1a1205 100%)',
     accent: '#d4a853',
-    image: '/travelerforge-preview.png',
+    images: [
+      '/travelerforge-preview.png',
+      '/travelerforge-2.png',
+      '/travelerforge-3.png',
+      '/travelerforge-4.png',
+      '/travelerforge-5.png',
+      '/travelerforge-6.png',
+      '/travelerforge-7.png',
+    ],
     Illustration: DashboardIllustration,
   },
   coolvending: {
     bg: 'linear-gradient(145deg, #1a1145 0%, #0d0922 55%, #111735 100%)',
     accent: '#818cf8',
-    image: '/coolvending-preview.png',
+    images: [
+      '/coolvending-preview.png',
+      '/coolvending-1.png',
+      '/coolvending-2.png',
+      '/coolvending-3.png',
+      '/coolvending-4.png',
+      '/coolvending-5.png',
+      '/coolvending-6.png',
+      '/coolvending-7.png',
+      '/coolvending-8.png',
+      '/coolvending-9.png',
+    ],
     Illustration: DashboardIllustration,
   },
   genesis: {
     bg: 'linear-gradient(145deg, #061a08 0%, #020d03 55%, #0a1c0b 100%)',
     accent: '#4ade80',
-    image: '/genesis-preview.png',
+    images: [
+      '/genesis-1.png',
+      '/genesis-cat.png',
+      '/genesis-2.png',
+      '/genesis-3.png',
+      '/genesis-4.png',
+      '/genesis-5.png',
+    ],
     Illustration: EcommerceIllustration,
   },
   nutrabit: {
     bg: 'linear-gradient(145deg, #042a26 0%, #020f0e 55%, #063430 100%)',
     accent: '#2dd4bf',
+    images: [],
     Illustration: MobileIllustration,
   },
 }
@@ -165,6 +193,7 @@ const getExperience = (t) => [
     period: t.experience.jobs.levelup.period,
     status: t.experience.jobs.levelup.status,
     short: t.experience.jobs.levelup.short,
+    bullets: t.experience.jobs.levelup.bullets,
     tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Google OAuth', 'Google Classroom API'],
     link: 'https://www.travelerforge.com/login',
   },
@@ -175,6 +204,7 @@ const getExperience = (t) => [
     period: t.experience.jobs.coolvending.period,
     status: t.experience.jobs.coolvending.status,
     short: t.experience.jobs.coolvending.short,
+    bullets: t.experience.jobs.coolvending.bullets,
     tags: ['React 19', 'Vite', 'Firebase', 'Bootstrap 5', 'Firestore', 'Firebase Auth'],
     link: 'https://coolvending.com.ar',
   },
@@ -185,6 +215,7 @@ const getExperience = (t) => [
     period: t.experience.jobs.genesis.period,
     status: t.experience.jobs.genesis.status,
     short: t.experience.jobs.genesis.short,
+    bullets: t.experience.jobs.genesis.bullets,
     tags: ['React', 'Firebase', 'Cloud Functions v2', 'Mercado Pago', 'ViaCargo'],
     link: 'https://genesisairsoft.com.ar/',
   },
@@ -195,6 +226,7 @@ const getExperience = (t) => [
     period: t.experience.jobs.nutrabit.period,
     status: t.experience.jobs.nutrabit.status,
     short: t.experience.jobs.nutrabit.short,
+    bullets: t.experience.jobs.nutrabit.bullets,
     tags: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Firebase Auth'],
     link: null,
     github: [
@@ -247,6 +279,7 @@ export default function Experience() {
   const sectionRef = useRef(null)
   const { t } = useLang()
   const EXPERIENCE = getExperience(t)
+  const [activeJob, setActiveJob] = useState(null)
 
   useGSAP((context, contextSafe) => {
     // ── Heading ───────────────────────────────────────────────────────
@@ -383,8 +416,9 @@ export default function Experience() {
         <div
           data-exp-card
           data-accent={visF.accent}
-          className="exp-featured relative rounded-2xl overflow-hidden border border-slate-800 bg-surface flex flex-col min-h-[420px] lg:col-span-2 lg:row-span-2"
+          className="exp-featured relative rounded-2xl overflow-hidden border border-slate-800 bg-surface flex flex-col min-h-[420px] lg:col-span-2 lg:row-span-2 cursor-pointer"
           style={{ position: 'relative' }}
+          onClick={() => setActiveJob(featured)}
         >
           {/* Full-card shimmer */}
           <div
@@ -403,8 +437,8 @@ export default function Experience() {
             style={{ background: visF.bg }}
           >
             <div className="illus-inner absolute inset-0 scale-[1.05]">
-              {visF.image ? (
-                <img src={visF.image} alt={featured.company}
+              {visF.images?.[0] ? (
+                <img src={visF.images[0]} alt={featured.company}
                      className="w-full h-full object-cover object-top" />
               ) : (
                 <visF.Illustration accent={visF.accent} />
@@ -446,6 +480,9 @@ export default function Experience() {
               ))}
             </div>
             <CardLinks job={featured} visual={visF} />
+            <p className="font-mono text-[10px] text-right" style={{ color: visF.accent, opacity: 0.45 }}>
+              ver detalle ↗
+            </p>
           </div>
         </div>
 
@@ -457,8 +494,9 @@ export default function Experience() {
               key={job.key}
               data-exp-card
               data-accent={visual.accent}
-              className="exp-small relative rounded-2xl overflow-hidden border border-slate-800 bg-surface flex flex-col min-h-[200px]"
-              style={{ position: 'relative' }}
+              className="exp-small relative rounded-2xl overflow-hidden border border-slate-800 bg-surface flex flex-col min-h-[200px] cursor-pointer"
+              style={{ position: 'relative', willChange: 'transform' }}
+              onClick={() => setActiveJob(job)}
             >
               {/* Full-card shimmer */}
               <div
@@ -474,8 +512,8 @@ export default function Experience() {
               {/* Illustration */}
               <div className="relative h-[140px] overflow-hidden shrink-0" style={{ background: visual.bg }}>
                 <div className="illus-inner absolute inset-0 scale-[1.05]">
-                  {visual.image ? (
-                    <img src={visual.image} alt={job.company}
+                  {visual.images?.[0] ? (
+                    <img src={visual.images[0]} alt={job.company}
                          className="w-full h-full object-cover object-top" />
                   ) : (
                     <visual.Illustration accent={visual.accent} />
@@ -519,6 +557,9 @@ export default function Experience() {
                   )}
                 </div>
                 <CardLinks job={job} visual={visual} />
+                <p className="font-mono text-[9px] text-right" style={{ color: visual.accent, opacity: 0.4 }}>
+                  ver detalle ↗
+                </p>
               </div>
             </div>
           )
@@ -531,8 +572,9 @@ export default function Experience() {
             <div
               data-exp-card
               data-accent={visN.accent}
-              className="exp-full relative rounded-2xl overflow-hidden border border-slate-800 bg-surface flex flex-col md:flex-row lg:col-span-3 min-h-[200px]"
+              className="exp-full relative rounded-2xl overflow-hidden border border-slate-800 bg-surface flex flex-col md:flex-row lg:col-span-3 min-h-[200px] cursor-pointer"
               style={{ position: 'relative' }}
+              onClick={() => setActiveJob(nutrabit)}
             >
               {/* Full-card shimmer */}
               <div
@@ -590,6 +632,9 @@ export default function Experience() {
                     ))}
                   </div>
                   <CardLinks job={nutrabit} visual={visN} />
+                  <p className="font-mono text-[10px] text-right" style={{ color: visN.accent, opacity: 0.4 }}>
+                    ver detalle ↗
+                  </p>
                 </div>
               </div>
             </div>
@@ -597,6 +642,16 @@ export default function Experience() {
         })()}
 
       </div>
+
+      {/* ── Detail Modal ─────────────────────────────────────────────── */}
+      {activeJob && (
+        <ExperienceModal
+          job={activeJob}
+          visual={VISUALS[activeJob.key]}
+          statusStyle={STATUS_COLORS[activeJob.status] ?? { dot: 'bg-slate-400', text: 'text-slate-400' }}
+          onClose={() => setActiveJob(null)}
+        />
+      )}
     </section>
   )
 }

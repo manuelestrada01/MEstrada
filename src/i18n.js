@@ -68,14 +68,14 @@ export const es = {
       levelup: {
         period: 'Mar 2026 – Abr 2026',
         status: 'En producción',
-        short: 'Plataforma gamificada de seguimiento académico para la Escuela Cristiana Evangélica Argentina. Motor de XP, strikes, niveles, talentos y panel docente completo sobre Next.js 15 + Supabase.',
+        short: 'Plataforma de seguimiento académico gamificada en uso por más de 100 alumnos en 4 cursos, con múltiples docentes simultáneos. Diseñada para escalar a nuevas instituciones sin reestructurar el sistema — XP, niveles, strikes y panel docente completo sobre Next.js 15 + Supabase.',
         bullets: [
-          'Diseñé y desarrollé una plataforma gamificada de seguimiento académico utilizada por alumnos y docentes de Educación Secundaria Técnica.',
-          'Construí el sistema sobre Next.js 15 (App Router) + TypeScript + Tailwind CSS, con Supabase (Postgres) como fuente de verdad y Google OAuth para autenticación institucional.',
-          'Integré la Google Classroom API (read-only) para sincronizar entregas, fechas y estados de alumnos en tiempo real, con motor de TTL de 5 minutos por curso.',
-          'Implementé un motor de XP y niveles con lógica de negocio compleja: XP acumulativa, strikes académicos, bloqueo de bimestre automático, talentos y distinciones configurables por docente.',
-          'Desarrollé un panel docente completo con gestión de cursos, configuración de tipos de producción dinámica, excepciones manuales sobre alumnos y registro histórico de todas las acciones.',
-          'Apliqué Screaming Architecture separando dominios (xp, strikes, talentos, docente) del routing de Next.js, logrando una base de código mantenible y extensible sin acoplamiento entre features.',
+          'Desarrollé la plataforma completa de forma independiente, desde la arquitectura hasta el deploy en producción.',
+          'Integré Google Classroom API para sincronizar entregas y estados de alumnos en tiempo real, eliminando carga manual para los docentes.',
+          'Construí un motor de XP con lógica de negocio compleja: acumulación por rendimiento, strikes académicos y bloqueo automático por bimestre.',
+          'Implementé Google OAuth para autenticación institucional sin fricción.',
+          'Diseñé el sistema multi-curso y multi-docente con roles y permisos diferenciados por institución.',
+          'Apliqué Screaming Architecture para mantener dominios desacoplados y el sistema extensible sin acoplamiento entre features.',
         ],
       },
       coolvending: {
@@ -186,14 +186,14 @@ export const en = {
       levelup: {
         period: 'Mar 2026 – Apr 2026',
         status: 'Live',
-        short: 'Gamified academic tracking platform for a Christian secondary school in Argentina. XP engine, strikes, levels, talents, and a full teacher dashboard built on Next.js 15 + Supabase.',
+        short: 'Gamified academic tracking platform actively used by 100+ students across 4 courses, with multiple concurrent teachers. Designed to scale to new institutions without restructuring — XP engine, levels, strikes and a full teacher dashboard on Next.js 15 + Supabase.',
         bullets: [
-          'Designed and built a gamified academic tracking platform used by students and teachers at a Technical Secondary School.',
-          'Built the system on Next.js 15 (App Router) + TypeScript + Tailwind CSS, with Supabase (Postgres) as the source of truth and Google OAuth for institutional authentication.',
-          'Integrated the Google Classroom API (read-only) to sync assignments, dates and student statuses in real time, with a 5-minute TTL cache per course.',
-          'Implemented an XP and levels engine with complex business logic: cumulative XP, academic strikes, automatic semester lockouts, and per-teacher configurable talents and distinctions.',
-          'Built a full teacher panel with course management, dynamic production type configuration, manual student exceptions, and a complete audit log of all actions.',
-          'Applied Screaming Architecture separating domains (xp, strikes, talents, teacher) from Next.js routing, achieving a maintainable and extensible codebase with no cross-feature coupling.',
+          'Built the full platform independently, from architecture design to production deployment.',
+          'Integrated Google Classroom API to sync assignments and student statuses in real time, eliminating manual workload for teachers.',
+          'Built an XP engine with complex business logic: performance-based accumulation, academic strikes and automatic semester lockouts.',
+          'Implemented Google OAuth for frictionless institutional authentication.',
+          'Designed a multi-course, multi-teacher system with role-based permissions scoped per institution.',
+          'Applied Screaming Architecture to keep domains decoupled and the system extensible with no cross-feature coupling.',
         ],
       },
       coolvending: {

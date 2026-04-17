@@ -98,6 +98,15 @@ html {
   .animate-wave-slide { animation: none; }
 }
 
+/* Hide scrollbar (keep scroll functionality) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Experience card scan line */
 @keyframes scanLine {
   0%   { transform: translateY(0px);    opacity: 0; }
