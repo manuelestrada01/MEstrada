@@ -34,6 +34,15 @@ const getProjects = (t) => [
     live: null,
     wip: true,
   },
+  {
+    badge: t.projects.badges.tool,
+    name: 'BrickLack',
+    description: t.projects.descriptions.bricklack,
+    tags: ['React 19', 'TypeScript', 'Vite', 'GSAP', 'Firebase', 'React Query', 'Zustand', 'Rebrickable API'],
+    github: 'https://github.com/manuelestrada01/BrickLack',
+    live: 'https://www.bricklack.com/',
+    wip: false,
+  },
 ]
 
 function LockIcon() {

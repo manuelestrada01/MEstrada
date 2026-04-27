@@ -91,6 +91,18 @@ export const es = {
           'Desarrollé CRUD completo de máquinas, eventos e insumos en el panel admin, con control de visibilidad de precios por usuario (puedeVerPrecios) gestionado desde Firestore.',
         ],
       },
+      bricklack: {
+        period: 'Abr 2026 – Abr 2026',
+        status: 'En producción',
+        short: 'Herramienta web para identificar y reconstruir sets de LEGO. Reconocimiento de piezas por imagen vía Brickognize API, búsqueda por número de parte y consulta de catálogo completo con Rebrickable API.',
+        bullets: [
+          'Desarrollé la plataforma completa de forma independiente, desde la arquitectura hasta el deploy en producción.',
+          'Integré la API de Brickognize para reconocimiento de piezas LEGO por imagen, retornando número de parte, nombre y score de confianza.',
+          'Implementé la Rebrickable API para consultar el catálogo completo de sets y piezas de LEGO.',
+          'Construí el frontend con React 19 + TypeScript + Vite, usando GSAP para animaciones, React Query para estado asíncrono y Zustand para estado global.',
+          'Configuré Firebase (Auth, Firestore, Storage, Cloud Functions v2) como backend serverless.',
+        ],
+      },
     },
   },
   projects: {
@@ -99,11 +111,12 @@ export const es = {
     wip: 'En desarrollo',
     private: 'Privado',
     visit: 'Ver sitio',
-    badges: { ecommerce: 'E-Commerce', mobile: 'App Móvil', webapp: 'Web App' },
+    badges: { ecommerce: 'E-Commerce', mobile: 'App Móvil', webapp: 'Web App', tool: 'Herramienta' },
     descriptions: {
       genesis:     'Plataforma de e-commerce completa para tienda de airsoft. Incluye catálogo de productos, carrito de compras, checkout con Mercado Pago, gestión de pedidos, notificaciones por email y lógica de envíos con ViaCargo.',
       nutrabit:    'Aplicación móvil de gestión nutricional para nutricionistas y pacientes. Gestión de turnos, calendario, perfiles personalizados y sistema de documentos (PDF/multimedia) para compartir contenido entre profesionales y pacientes.',
       coolvending: 'Plataforma web para gestión y visualización de máquinas expendedoras. Interfaz moderna para administrar inventario, seguimiento de ventas y estado de máquinas en tiempo real.',
+      bricklack:   'Herramienta para identificar y reconstruir sets de LEGO. Usa la API de Brickognize para reconocer piezas por imagen y devuelve número de parte, nombre y score de confianza. Construida con React 19 + TypeScript, Firebase y la Rebrickable API.',
     },
   },
   contact: {
@@ -209,6 +222,18 @@ export const en = {
           'Developed full CRUD for machines, events and supplies in the admin panel, with per-user price visibility control (puedeVerPrecios) managed from Firestore.',
         ],
       },
+      bricklack: {
+        period: 'Apr 2026 – Apr 2026',
+        status: 'Live',
+        short: 'Web tool for identifying and rebuilding LEGO sets. Image-based part recognition via Brickognize API, part number search, and full catalog queries with the Rebrickable API.',
+        bullets: [
+          'Built the full platform independently, from architecture to production deployment.',
+          'Integrated the Brickognize API for image-based LEGO part recognition, returning part number, name, and confidence score.',
+          'Implemented the Rebrickable API to query the complete catalog of LEGO sets and parts.',
+          'Built the frontend with React 19 + TypeScript + Vite, using GSAP for animations, React Query for async state, and Zustand for global state.',
+          'Configured Firebase (Auth, Firestore, Storage, Cloud Functions v2) as the serverless backend.',
+        ],
+      },
     },
   },
   projects: {
@@ -217,11 +242,12 @@ export const en = {
     wip: 'In progress',
     private: 'Private',
     visit: 'Visit site',
-    badges: { ecommerce: 'E-Commerce', mobile: 'Mobile App', webapp: 'Web App' },
+    badges: { ecommerce: 'E-Commerce', mobile: 'Mobile App', webapp: 'Web App', tool: 'Tool' },
     descriptions: {
       genesis:     'Full e-commerce platform for an airsoft store. Includes product catalog, shopping cart, Mercado Pago checkout, order management, email notifications and shipping logic with ViaCargo.',
       nutrabit:    'Mobile app for nutritional management for nutritionists and patients. Appointment management, calendar, personalized profiles and a document system (PDF/multimedia) to share content between professionals and patients.',
       coolvending: 'Web platform for managing and visualizing vending machines. Modern interface for inventory management, sales tracking and real-time machine status.',
+      bricklack:   'Tool for identifying and rebuilding LEGO sets. Uses the Brickognize API to recognize pieces from images and returns part number, name, and confidence score. Built with React 19 + TypeScript, Firebase, and the Rebrickable API.',
     },
   },
   contact: {

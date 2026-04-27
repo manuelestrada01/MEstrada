@@ -174,6 +174,18 @@ const VISUALS = {
     images: [],
     Illustration: MobileIllustration,
   },
+  bricklack: {
+    bg: 'linear-gradient(145deg, #1a0e00 0%, #0d0700 55%, #1f1000 100%)',
+    accent: '#f97316',
+    images: [
+      '/bricklack-preview.png',
+      '/bricklack-1.png',
+      '/bricklack-2.png',
+      '/bricklack-3.png',
+      '/bricklack-4.png',
+    ],
+    Illustration: DashboardIllustration,
+  },
 }
 
 const STATUS_COLORS = {
@@ -218,6 +230,18 @@ const getExperience = (t) => [
     bullets: t.experience.jobs.genesis.bullets,
     tags: ['React', 'Firebase', 'Cloud Functions v2', 'Mercado Pago', 'ViaCargo'],
     link: 'https://genesisairsoft.com.ar/',
+  },
+  {
+    key: 'bricklack',
+    role: 'Full Stack Developer — Proyecto Propio',
+    company: 'BrickLack',
+    period: t.experience.jobs.bricklack.period,
+    status: t.experience.jobs.bricklack.status,
+    short: t.experience.jobs.bricklack.short,
+    bullets: t.experience.jobs.bricklack.bullets,
+    tags: ['React 19', 'TypeScript', 'Vite', 'GSAP', 'Firebase', 'React Query', 'Zustand', 'Rebrickable API'],
+    link: 'https://www.bricklack.com/',
+    github: [{ label: 'GitHub', url: 'https://github.com/manuelestrada01/BrickLack' }],
   },
   {
     key: 'nutrabit',
@@ -378,11 +402,12 @@ export default function Experience() {
     }
   }, { scope: sectionRef })
 
-  const [featured, cv, genesis, nutrabit] = EXPERIENCE
-  const visF  = VISUALS[featured.key]
-  const visCv = VISUALS[cv.key]
-  const visG  = VISUALS[genesis.key]
-  const visN  = VISUALS[nutrabit.key]
+  const [featured, cv, genesis, bricklack, nutrabit] = EXPERIENCE
+  const visF   = VISUALS[featured.key]
+  const visCv  = VISUALS[cv.key]
+  const visG   = VISUALS[genesis.key]
+  const visN   = VISUALS[nutrabit.key]
+  const visBL  = VISUALS[bricklack.key]
 
   return (
     <section id="experience" ref={sectionRef} className="py-24 px-6 max-w-6xl mx-auto">
@@ -405,6 +430,9 @@ export default function Experience() {
           └──────────────────────┴──────────────┘
           ┌──────────────────────────────────────┐
           │        Nutrabit (full-width)          │  row 3: auto
+          └──────────────────────────────────────┘
+          ┌──────────────────────────────────────┐
+          │        BrickLack (full-width)         │  row 4: auto
           └──────────────────────────────────────┘
       */}
       <div
@@ -565,6 +593,73 @@ export default function Experience() {
           )
         })}
 
+        {/* ── FULL-WIDTH: BrickLack ─────────────────────────────────── */}
+        {(() => {
+          const sStyle = STATUS_COLORS[bricklack.status] ?? { dot: 'bg-slate-400', text: 'text-slate-400' }
+          return (
+            <div
+              data-exp-card
+              data-accent={visBL.accent}
+              className="exp-full relative rounded-2xl overflow-hidden border border-slate-800 bg-surface flex flex-col md:flex-row lg:col-span-3 min-h-[200px] cursor-pointer"
+              style={{ position: 'relative' }}
+              onClick={() => setActiveJob(bricklack)}
+            >
+              {/* Illustration — left panel */}
+              <div
+                className="relative h-52 md:h-auto md:w-[38%] overflow-hidden shrink-0"
+                style={{ background: visBL.bg }}
+              >
+                <div className="illus-inner absolute inset-0 scale-[1.05]">
+                  {visBL.images?.[0] ? (
+                    <img src={visBL.images[0]} alt={bricklack.company}
+                         className="w-full h-full object-cover object-top" />
+                  ) : (
+                    <visBL.Illustration accent={visBL.accent} />
+                  )}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-950/80 via-slate-950/20 to-transparent" />
+
+                <span className="absolute bottom-1 right-4 font-mono font-bold select-none pointer-events-none leading-none text-white/[0.05]"
+                      style={{ fontSize: '5.5rem' }}>
+                  04
+                </span>
+
+                <span className="absolute top-3 right-3 font-mono text-[10px] text-slate-400 bg-slate-950/75 backdrop-blur-sm px-2 py-0.5 rounded-full border border-slate-700/50">
+                  {bricklack.period}
+                </span>
+              </div>
+
+              {/* Body — right panel */}
+              <div className="relative z-10 flex flex-col flex-1 p-6 justify-between gap-4">
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="text-lg font-bold text-white">{bricklack.company}</h3>
+                    <span className={`inline-flex items-center gap-1.5 font-mono text-[11px] shrink-0 ${sStyle.text}`}>
+                      <span className={`w-1.5 h-1.5 rounded-full ${sStyle.dot} animate-pulse`} />
+                      {bricklack.status}
+                    </span>
+                  </div>
+                  <p className="font-mono text-slate-500 text-[11px]">{bricklack.role}</p>
+                  <p className="text-slate-400 text-sm leading-relaxed">{bricklack.short}</p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-wrap gap-1.5">
+                    {bricklack.tags.map(tag => (
+                      <span key={tag} className="font-mono text-[10px] bg-slate-900 border border-slate-700/60 text-slate-400 rounded-md px-2 py-0.5">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <CardLinks job={bricklack} visual={visBL} />
+                  <p className="font-mono text-[10px] text-right" style={{ color: visBL.accent, opacity: 0.4 }}>
+                    ver detalle ↗
+                  </p>
+                </div>
+              </div>
+            </div>
+          )
+        })()}
+
         {/* ── FULL-WIDTH: Nutrabit ───────────────────────────────────── */}
         {(() => {
           const sStyle = STATUS_COLORS[nutrabit.status] ?? { dot: 'bg-slate-400', text: 'text-slate-400' }
@@ -595,16 +690,13 @@ export default function Experience() {
                 <div className="illus-inner absolute inset-0 scale-[1.05]">
                   <visN.Illustration accent={visN.accent} />
                 </div>
-                {/* Gradient: bottom on mobile, right on md+ */}
                 <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-950/80 via-slate-950/20 to-transparent" />
 
-                {/* Number watermark */}
                 <span className="absolute bottom-1 right-4 font-mono font-bold select-none pointer-events-none leading-none text-white/[0.05]"
                       style={{ fontSize: '5.5rem' }}>
-                  04
+                  05
                 </span>
 
-                {/* Period */}
                 <span className="absolute top-3 right-3 font-mono text-[10px] text-slate-400 bg-slate-950/75 backdrop-blur-sm px-2 py-0.5 rounded-full border border-slate-700/50">
                   {nutrabit.period}
                 </span>

@@ -4,7 +4,16 @@
       "WebFetch(domain:fjanza.vercel.app)",
       "Bash(curl -s \"https://fjanza.vercel.app/\")",
       "Bash(npx vercel:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(cp \"C:/Users/jetsa/.claude/image-cache/9cc9cf71-2b3a-4f68-bc82-9b0f6a8eaf43/8.png\"  \"C:/Users/jetsa/MEstrada/public/travelerforge-preview.png\")",
+      "Bash(cp \"C:/Users/jetsa/.claude/image-cache/9cc9cf71-2b3a-4f68-bc82-9b0f6a8eaf43/9.png\"  \"C:/Users/jetsa/MEstrada/public/travelerforge-2.png\")",
+      "Bash(cp \"C:/Users/jetsa/.claude/image-cache/9cc9cf71-2b3a-4f68-bc82-9b0f6a8eaf43/10.png\" \"C:/Users/jetsa/MEstrada/public/travelerforge-3.png\")",
+      "Bash(cp \"C:/Users/jetsa/.claude/image-cache/9cc9cf71-2b3a-4f68-bc82-9b0f6a8eaf43/11.png\" \"C:/Users/jetsa/MEstrada/public/travelerforge-4.png\")",
+      "Bash(cp \"C:/Users/jetsa/.claude/image-cache/9cc9cf71-2b3a-4f68-bc82-9b0f6a8eaf43/12.png\" \"C:/Users/jetsa/MEstrada/public/travelerforge-5.png\")",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:www.bricklack.com)"
     ]
   }
 }
