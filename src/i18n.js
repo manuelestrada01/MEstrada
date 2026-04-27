@@ -43,7 +43,7 @@ export const es = {
     heading: 'Mi trayectoria',
     jobs: {
       genesis: {
-        period: 'Sep 2025 – Presente',
+        period: 'Sep 2025 – Ene 2026',
         status: 'En producción',
         short: 'Plataforma e-commerce full stack para tienda de airsoft: catálogo, carrito, checkout con Mercado Pago, gestión de pedidos, envíos con ViaCargo y notificaciones por email.',
         bullets: [
@@ -174,7 +174,7 @@ export const en = {
     heading: 'My journey',
     jobs: {
       genesis: {
-        period: 'Sep 2025 – Present',
+        period: 'Sep 2025 – Jan 2026',
         status: 'Live',
         short: 'Full stack e-commerce platform for an airsoft store: catalog, cart, Mercado Pago checkout, order management, ViaCargo shipping logic and email notifications.',
         bullets: [

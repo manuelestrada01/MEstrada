@@ -208,6 +208,7 @@ const getExperience = (t) => [
     bullets: t.experience.jobs.levelup.bullets,
     tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Google OAuth', 'Google Classroom API'],
     link: 'https://www.travelerforge.com/login',
+    github: [{ label: 'GitHub', url: 'https://github.com/manuelestrada01/TravelerForge' }],
   },
   {
     key: 'coolvending',
@@ -219,6 +220,7 @@ const getExperience = (t) => [
     bullets: t.experience.jobs.coolvending.bullets,
     tags: ['React 19', 'Vite', 'Firebase', 'Bootstrap 5', 'Firestore', 'Firebase Auth'],
     link: 'https://coolvending.com.ar',
+    github: [{ label: 'GitHub', url: 'https://github.com/manuelestrada01/Coolvending' }],
   },
   {
     key: 'genesis',
@@ -230,6 +232,7 @@ const getExperience = (t) => [
     bullets: t.experience.jobs.genesis.bullets,
     tags: ['React', 'Firebase', 'Cloud Functions v2', 'Mercado Pago', 'ViaCargo'],
     link: 'https://genesisairsoft.com.ar/',
+    github: [{ label: 'GitHub', url: 'https://github.com/manuelestrada01/Genesis-Airsoft' }],
   },
   {
     key: 'bricklack',
