@@ -23,7 +23,7 @@ export const es = {
       programador: { title: 'Analista Programador',  sub: 'ORT Argentina · 2022–2024' },
       claude:      { title: 'Claude Code in Action', sub: 'Anthropic · Marzo 2026' },
       ingles:      { title: 'Inglés B2',             sub: 'Lectura técnica fluida, comunicación profesional avanzada' },
-      foco:        { title: 'Foco actual',           sub: 'Arquitecturas serverless, Flutter, integraciones de pagos' },
+      foco:        { title: 'Foco actual',           sub: 'Arquitecturas serverless, integraciones de pagos, diseño de interfaces' },
     },
   },
   skills: {
@@ -68,7 +68,7 @@ export const es = {
       levelup: {
         period: 'Mar 2026 – Abr 2026',
         status: 'En producción',
-        short: 'Plataforma de seguimiento académico gamificada en uso por más de 100 alumnos en 4 cursos, con múltiples docentes simultáneos. Diseñada para escalar a nuevas instituciones sin reestructurar el sistema — XP, niveles, strikes y panel docente completo sobre Next.js 15 + Supabase.',
+        short: 'Plataforma de seguimiento académico gamificada desarrollada para el Colegio ECEA, en uso por más de 100 alumnos en 4 cursos con múltiples docentes simultáneos. Diseñada para escalar a nuevas instituciones sin reestructurar el sistema — XP, niveles, strikes y panel docente completo sobre Next.js 15 + Supabase.',
         bullets: [
           'Desarrollé la plataforma completa de forma independiente, desde la arquitectura hasta el deploy en producción.',
           'Integré Google Classroom API para sincronizar entregas y estados de alumnos en tiempo real, eliminando carga manual para los docentes.',
@@ -94,13 +94,14 @@ export const es = {
       bricklack: {
         period: 'Abr 2026 – Abr 2026',
         status: 'En producción',
-        short: 'Herramienta web para identificar y reconstruir sets de LEGO. Reconocimiento de piezas por imagen vía Brickognize API, búsqueda por número de parte y consulta de catálogo completo con Rebrickable API.',
+        short: 'Plataforma web para trackear y reconstruir sets de LEGO. Importa inventarios desde Rebrickable, identifica piezas por foto con Brickognize, colaboración en tiempo real y comunidad de MOCs.',
         bullets: [
           'Desarrollé la plataforma completa de forma independiente, desde la arquitectura hasta el deploy en producción.',
-          'Integré la API de Brickognize para reconocimiento de piezas LEGO por imagen, retornando número de parte, nombre y score de confianza.',
-          'Implementé la Rebrickable API para consultar el catálogo completo de sets y piezas de LEGO.',
-          'Construí el frontend con React 19 + TypeScript + Vite, usando GSAP para animaciones, React Query para estado asíncrono y Zustand para estado global.',
-          'Configuré Firebase (Auth, Firestore, Storage, Cloud Functions v2) como backend serverless.',
+          'Implementé un sistema de tracking de piezas que importa inventarios completos desde Rebrickable automáticamente, con caché en Firestore para minimizar llamadas a la API.',
+          'Integré Brickognize para identificación de piezas por foto — el usuario saca una foto y obtiene número de parte, nombre y score de confianza.',
+          'Construí colaboración en tiempo real con Firestore listeners: los miembros de un proyecto ven las actualizaciones al instante, con asignación y distribución de piezas entre participantes.',
+          'Desarrollé una comunidad de MOCs con publicación, likes, reportes y moderación automática, con reCAPTCHA v3 y límites por usuario.',
+          'Stack: React 19 + TypeScript + Vite, GSAP para animaciones, TanStack Query + Zustand para state management, Firebase como backend serverless y i18next con soporte para 5 idiomas.',
         ],
       },
     },
@@ -116,7 +117,7 @@ export const es = {
       genesis:     'Plataforma de e-commerce completa para tienda de airsoft. Incluye catálogo de productos, carrito de compras, checkout con Mercado Pago, gestión de pedidos, notificaciones por email y lógica de envíos con ViaCargo.',
       nutrabit:    'Aplicación móvil de gestión nutricional para nutricionistas y pacientes. Gestión de turnos, calendario, perfiles personalizados y sistema de documentos (PDF/multimedia) para compartir contenido entre profesionales y pacientes.',
       coolvending: 'Plataforma web para gestión y visualización de máquinas expendedoras. Interfaz moderna para administrar inventario, seguimiento de ventas y estado de máquinas en tiempo real.',
-      bricklack:   'Herramienta para identificar y reconstruir sets de LEGO. Usa la API de Brickognize para reconocer piezas por imagen y devuelve número de parte, nombre y score de confianza. Construida con React 19 + TypeScript, Firebase y la Rebrickable API.',
+      bricklack:   'Plataforma web para trackear y reconstruir sets de LEGO. Importa inventarios desde Rebrickable, identifica piezas por foto con Brickognize, colaboración en tiempo real y comunidad de MOCs.',
     },
   },
   contact: {
@@ -154,7 +155,7 @@ export const en = {
       programador: { title: 'Programmer Analyst',    sub: 'ORT Argentina · 2022–2024' },
       claude:      { title: 'Claude Code in Action', sub: 'Anthropic · March 2026' },
       ingles:      { title: 'English B2',            sub: 'Fluent technical reading, advanced professional communication' },
-      foco:        { title: 'Current focus',         sub: 'Serverless architectures, Flutter, payment integrations' },
+      foco:        { title: 'Current focus',         sub: 'Serverless architectures, payment integrations, UI design' },
     },
   },
   skills: {
@@ -199,7 +200,7 @@ export const en = {
       levelup: {
         period: 'Mar 2026 – Apr 2026',
         status: 'Live',
-        short: 'Gamified academic tracking platform actively used by 100+ students across 4 courses, with multiple concurrent teachers. Designed to scale to new institutions without restructuring — XP engine, levels, strikes and a full teacher dashboard on Next.js 15 + Supabase.',
+        short: 'Gamified academic tracking platform built for Colegio ECEA, actively used by 100+ students across 4 courses with multiple concurrent teachers. Designed to scale to new institutions without restructuring — XP engine, levels, strikes and a full teacher dashboard on Next.js 15 + Supabase.',
         bullets: [
           'Built the full platform independently, from architecture design to production deployment.',
           'Integrated Google Classroom API to sync assignments and student statuses in real time, eliminating manual workload for teachers.',
@@ -225,13 +226,14 @@ export const en = {
       bricklack: {
         period: 'Apr 2026 – Apr 2026',
         status: 'Live',
-        short: 'Web tool for identifying and rebuilding LEGO sets. Image-based part recognition via Brickognize API, part number search, and full catalog queries with the Rebrickable API.',
+        short: 'Web platform for tracking and rebuilding LEGO sets. Imports inventories from Rebrickable, identifies parts by photo with Brickognize, real-time collaboration, and a MOCs community.',
         bullets: [
           'Built the full platform independently, from architecture to production deployment.',
-          'Integrated the Brickognize API for image-based LEGO part recognition, returning part number, name, and confidence score.',
-          'Implemented the Rebrickable API to query the complete catalog of LEGO sets and parts.',
-          'Built the frontend with React 19 + TypeScript + Vite, using GSAP for animations, React Query for async state, and Zustand for global state.',
-          'Configured Firebase (Auth, Firestore, Storage, Cloud Functions v2) as the serverless backend.',
+          'Implemented a parts tracking system that automatically imports complete inventories from Rebrickable, with Firestore caching to minimize API calls.',
+          'Integrated Brickognize for photo-based part identification — the user takes a photo and gets part number, name, and confidence score.',
+          'Built real-time collaboration with Firestore listeners: project members see updates instantly, with part assignment and distribution among participants.',
+          'Developed a MOCs community with publishing, likes, reports, and automatic moderation, using reCAPTCHA v3 and per-user rate limits.',
+          'Stack: React 19 + TypeScript + Vite, GSAP for animations, TanStack Query + Zustand for state management, Firebase as serverless backend, and i18next with support for 5 languages.',
         ],
       },
     },
@@ -247,7 +249,7 @@ export const en = {
       genesis:     'Full e-commerce platform for an airsoft store. Includes product catalog, shopping cart, Mercado Pago checkout, order management, email notifications and shipping logic with ViaCargo.',
       nutrabit:    'Mobile app for nutritional management for nutritionists and patients. Appointment management, calendar, personalized profiles and a document system (PDF/multimedia) to share content between professionals and patients.',
       coolvending: 'Web platform for managing and visualizing vending machines. Modern interface for inventory management, sales tracking and real-time machine status.',
-      bricklack:   'Tool for identifying and rebuilding LEGO sets. Uses the Brickognize API to recognize pieces from images and returns part number, name, and confidence score. Built with React 19 + TypeScript, Firebase, and the Rebrickable API.',
+      bricklack:   'Web platform for tracking and rebuilding LEGO sets. Imports inventories from Rebrickable, identifies parts by photo with Brickognize, real-time collaboration, and a MOCs community.',
     },
   },
   contact: {
